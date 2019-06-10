@@ -10,12 +10,12 @@ FILE *execcmd(char *cmd)
     FILE *fp = popen(cmd, "r");
     return fp;
 }
-/*
+
 int s_send(s, msg)
 {
     return send(s, msg,strlen(msg), 0);
 }
-*/
+
 int main(int argc , char *argv[])
 {
     // simple constants that hold the port and address on which the control server is listening
